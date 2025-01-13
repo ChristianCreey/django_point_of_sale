@@ -1,0 +1,13 @@
+Modulo de ventas
+Modulo de inventario
+Modulo de clientes
+Modulo de reportes y analisis
+Gestion de usuarios y seguridad
+Modulode integracion con ecommerce y canales de venta
+Modulos de gestion de promociones y descuentos
+Modulo de gestion de compras
+Modulo de contabilidad e integracion financiera
+Modulo de soporte y servicio al clientes
+
+
+https://chatgpt.com/share/67853c03-57a8-800c-aca7-fd27c501720f
