@@ -30,7 +30,8 @@ class Product(models.Model):
         ("ACTIVE", "Active"),
         ("INACTIVE", "Inactive")
     )
-
+    
+    barcode = models.CharField(max_length=256, unique=True, blank=False, null=False, default='0000000000')
     name = models.CharField(max_length=256)
     description = models.TextField(max_length=256)
     status = models.CharField(
@@ -52,7 +53,7 @@ class Product(models.Model):
 
     def to_json(self):
         item = model_to_dict(self)
-        item['id'] = self.id
+        item['id'] = self.barcode
         item['text'] = self.name
         item['category'] = self.category.name
         item['quantity'] = 1

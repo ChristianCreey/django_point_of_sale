@@ -32,12 +32,8 @@
                         <input type="text" class="form-control" name="name" placeholder="Chicken Breasts..." required>
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="state">State</label>
-                        <select name="state" class="form-control" required>
-                            {% for status in product_status %}
-                            <option value="{{status.0}}">{{status.1}}</option>
-                            {% endfor %}
-                        </select>
+                        <label for="barcode">Barcode</label>
+                        <input type="text" class="form-control", name="barcode", placeholder="Barcode..." required>
                     </div>
                 </div>
 
@@ -61,6 +57,14 @@
                     <div class="form-group col-md-8">
                         <label for="inputPrice">Price</label>
                         <input type="number" name="price" step="any"  class="form-control" placeholder="10.99" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="state">State</label>
+                        <select name="state" class="form-control" required>
+                            {% for status in product_status %}
+                            <option value="{{status.0}}">{{status.1}}</option>
+                            {% endfor %}
+                        </select>
                     </div>
                 </div>
                 

@@ -162,9 +162,16 @@ def products_add_view(request):
             "status": data['state'],
             "description": data['description'],
             "category": Category.objects.get(id=data['category']),
-            "price": data['price']
+            "price": data['price'],
+            "barcode": data['barcode']
         }
 
+        # Verificar si ya existe un producto con el mismo código de barras
+        if Product.objects.filter(barcode=attributes["barcode"]).exists():
+            messages.error(request, 'Product with this barcode already exists!',
+                           extra_tags="warning")
+            return redirect('products:products_add')
+            
         # Check if a product with the same attributes exists
         if Product.objects.filter(**attributes).exists():
             messages.error(request, 'Product already exists!',

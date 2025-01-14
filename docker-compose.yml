@@ -1,0 +1,14 @@
+services:
+  django_app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    command: >
+      sh -c "python django_pos/manage.py makemigrations &&
+             python django_pos/manage.py migrate &&
+             python django_pos/manage.py runserver 0.0.0.0:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
