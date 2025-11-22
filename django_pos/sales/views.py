@@ -13,6 +13,8 @@ from weasyprint import HTML, CSS
 from .models import Sale, SaleDetail
 import json
 
+from django.db.models import Sum
+
 
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
@@ -20,6 +22,7 @@ def is_ajax(request):
 
 @login_required(login_url="/accounts/login/")
 def sales_list_view(request):
+    sales = Sale.objects.annotate(sum_items=Sum('saledetail__quantity'))
     context = {
         "active_icon": "sales",
         "sales": Sale.objects.all()

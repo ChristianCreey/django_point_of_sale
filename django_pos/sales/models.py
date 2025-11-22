@@ -21,8 +21,10 @@ class Sale(models.Model):
     def __str__(self) -> str:
         return "Sale ID: " + str(self.id) + " | Grand Total: " + str(self.grand_total) + " | Datetime: " + str(self.date_added)
 
+    @property
     def sum_items(self):
         details = SaleDetail.objects.filter(sale=self.id)
+        #details = self.details.all()  # Usando related_name
         return sum([d.quantity for d in details])
 
 

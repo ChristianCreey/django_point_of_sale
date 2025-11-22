@@ -3,7 +3,7 @@ Modulo de inventario
 Modulo de clientes
 Modulo de reportes y analisis
 Gestion de usuarios y seguridad
-Modulode integracion con ecommerce y canales de venta
+Modulo de integracion con ecommerce y canales de venta
 Modulos de gestion de promociones y descuentos
 Modulo de gestion de compras
 Modulo de contabilidad e integracion financiera
